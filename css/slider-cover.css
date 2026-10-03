@@ -1,0 +1,188 @@
+/* IQ HOUSE — hero: left copy + right fading photos */
+.iqCover {
+  --iq-cover-navy: #07122e;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: clamp(620px, 86vh, 900px);
+  /* Extra bottom navy so curved why-panel can sit into a clear corner frame */
+  padding: 0 0 clamp(110px, 14vw, 180px);
+  box-sizing: border-box;
+  overflow: hidden;
+  background: var(--iq-cover-navy);
+  line-height: normal;
+}
+
+/* Photo stage — full-bleed static cover */
+.iqCover__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.iqCover__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Soft left blend so brand copy stays readable over 3D marquee bg */
+.iqCover__blend {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    108deg,
+    rgba(7, 18, 46, 0.97) 0%,
+    rgba(7, 18, 46, 0.94) 20%,
+    rgba(7, 18, 46, 0.72) 36%,
+    rgba(7, 18, 46, 0.38) 48%,
+    rgba(7, 18, 46, 0.12) 60%,
+    rgba(7, 18, 46, 0) 72%
+  );
+}
+
+.iqCover__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.iqCover__inner {
+  width: var(--iq-content-w, min(1180px, calc(100% - 40px)));
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.iqCover__brand {
+  width: max-content;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.iqCover__name {
+  margin: 0;
+  color: #ffffff;
+  background: none;
+  -webkit-text-fill-color: #ffffff;
+  font-family: var(--iq-font);
+  font-size: clamp(30px, 4.2vw, 52px);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  white-space: nowrap;
+  text-shadow: 0 2px 18px rgba(4, 12, 36, 0.35);
+}
+
+.iqCover__slogan {
+  margin: 12px 0 0;
+  max-width: 34em;
+  color: rgba(232, 238, 252, 0.94);
+  font-family: var(--iq-font);
+  font-size: clamp(13px, 1.35vw, 16px);
+  font-weight: 500;
+  line-height: 1.7;
+  text-shadow: 0 1px 14px rgba(4, 12, 36, 0.45);
+}
+
+.iqCover__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.iqCover__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  padding: 11px 24px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, #1e3f6f 0%, #0f2748 45%, #0c1a36 100%);
+  color: #ffffff !important;
+  font-family: var(--iq-font);
+  font-size: clamp(13px, 1.3vw, 15px);
+  font-weight: 650;
+  text-decoration: none !important;
+  box-shadow: 0 12px 30px rgba(8, 18, 48, 0.35);
+}
+
+.iqCover__btn--ghost {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.42);
+  color: #ffffff !important;
+  box-shadow: none;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.iqCover__btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.65);
+  filter: none;
+}
+
+.iqCover__btn:hover {
+  filter: brightness(1.05);
+}
+
+@media (max-width: 900px) {
+  .iqCover {
+    min-height: clamp(640px, 88vh, 820px);
+    padding-bottom: clamp(88px, 16vw, 140px);
+  }
+
+  .iqCover__media {
+    width: 100%;
+  }
+
+  .iqCover__img {
+    object-position: 42% 40%;
+  }
+
+  .iqCover__blend {
+    background: linear-gradient(
+      180deg,
+      rgba(7, 18, 46, 0.45) 0%,
+      rgba(7, 18, 46, 0.72) 42%,
+      rgba(7, 18, 46, 0.94) 100%
+    );
+  }
+
+  .iqCover__content {
+    padding: 0 20px;
+  }
+
+  .iqCover__brand {
+    width: 100%;
+  }
+
+  .iqCover__name {
+    white-space: normal;
+  }
+
+  .iqCover__slogan {
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iqCover__name {
+    animation: none;
+    background-position: 50% 50%;
+  }
+}

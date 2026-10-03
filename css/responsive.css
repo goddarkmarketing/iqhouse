@@ -1,0 +1,366 @@
+/* IQ HOUSE — iPad and phone layout */
+
+@media (max-width: 1100px) {
+  .iqNav__bar {
+    position: relative;
+  }
+
+  .iqNav__toggle {
+    display: grid;
+    place-items: center;
+  }
+
+  .iqNav__menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    margin: 0;
+    padding: 8px 0 14px;
+    background: #fff;
+    border-bottom: 1px solid var(--iq-line);
+    box-shadow: 0 16px 32px rgba(12, 26, 54, 0.08);
+  }
+
+  .iqNav.is-open .iqNav__menu {
+    display: flex;
+  }
+
+  .iqNav__link {
+    padding: 14px 8px;
+    font-size: 16px;
+  }
+
+  .iqNav__cta {
+    display: none;
+  }
+
+  .iqNav__logo img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .iqCover {
+    align-items: flex-end;
+    min-height: calc(100svh - var(--iq-nav-h));
+    padding-bottom: 168px;
+  }
+
+  .iqCover__img {
+    object-position: 70% 40%;
+  }
+
+  .iqCover__blend {
+    background: linear-gradient(
+      180deg,
+      rgba(7, 18, 46, 0.18) 0%,
+      rgba(7, 18, 46, 0.28) 34%,
+      rgba(7, 18, 46, 0.78) 68%,
+      rgba(7, 18, 46, 0.94) 100%
+    );
+  }
+
+  .iqCover__name {
+    white-space: normal;
+  }
+
+  .iqServices__row,
+  .iqHomeArticles,
+  .iqDesignGrid,
+  .iqGallery,
+  .iqAboutPage__valueGrid,
+  .iqFooter__grid,
+  .iqHomeSteps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .iqServices__item,
+  .iqServices__item--up {
+    height: 340px;
+    margin-top: 0;
+  }
+
+  .iqServices__pill,
+  .iqServices__pill--mid,
+  .iqServices__pill--bottom {
+    left: 12px;
+    width: auto;
+    max-width: calc(100% - 24px);
+    transform: none;
+    white-space: normal;
+  }
+
+  .iqServices__pill--bottom {
+    bottom: 14px;
+  }
+
+  .iqDesignSide {
+    position: static;
+  }
+
+  .iqDesignCats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .iqDesignCats h2,
+  .iqDesignSearch,
+  .iqDesignNote {
+    width: 100%;
+  }
+
+  .iqDesignCats button,
+  .iqDesignClear {
+    width: auto;
+  }
+
+  .iqPage__hero {
+    min-height: 260px;
+  }
+
+  .iqPage__heroImg--banner {
+    object-position: 78% center;
+  }
+
+  .iqPage__heroShade {
+    background: linear-gradient(
+      90deg,
+      rgba(7, 18, 46, 0.9) 0%,
+      rgba(7, 18, 46, 0.62) 42%,
+      rgba(7, 18, 46, 0.18) 100%
+    );
+  }
+
+  .iqPage__lead,
+  .iqTrust__quoteLine {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 900px) {
+  .iqWhy,
+  .iqCover,
+  .iqWorks,
+  .iqServices,
+  .iqTrust,
+  .iqHandover,
+  .iqHomeBlock,
+  .iqFooter {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .iqWhy__inner,
+  .iqCover__inner,
+  .iqCover__content {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .iqWhy__inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .iqWhy__title,
+  .iqWhy__lead,
+  .iqCover__name,
+  .iqCover__slogan {
+    max-width: 100%;
+  }
+
+  .iqTopbar__hours,
+  .iqTopbar__area {
+    display: none;
+  }
+
+  .iqWhy__points {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .iqWhy__point,
+  .iqWhy__point:first-child {
+    border-left: 0;
+    padding: 18px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  .iqWhy__point:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .iqArticleLayout {
+    grid-template-columns: 1fr;
+  }
+
+  .iqArticleSide {
+    position: static;
+  }
+
+  .iqContactField input,
+  .iqContactField select,
+  .iqContactField textarea,
+  .iqDesignSearch input,
+  .iqArticleSearch input,
+  .iqArticleBoard__field input,
+  .iqArticleBoard__field select {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  :root {
+    --iq-content-w: min(1180px, calc(100% - 32px));
+  }
+
+  .iqTopbar__social {
+    display: none;
+  }
+
+  .iqTopbar__inner {
+    width: 100%;
+    max-width: none;
+    padding: 0 16px;
+  }
+
+  .iqCover {
+    padding-bottom: 148px;
+  }
+
+  .iqPage__hero {
+    min-height: 210px;
+  }
+
+  .iqPage__heroInner,
+  .iqPage__wrap,
+  .iqArticleLayout,
+  .iqFooter__wrap,
+  .iqWorks__head,
+  .iqServices__board,
+  .iqHandover__head,
+  .iqHomeBlock__wrap,
+  .iqTrust__wrap,
+  .iqHomeBlock__wrap--full .iqHomeBlock__head,
+  .iqHomeBlock__wrap--full .iqHomeBlock__more {
+    width: min(1180px, calc(100% - 32px));
+  }
+
+  .iqPage__heroInner {
+    padding: 28px 0;
+  }
+
+  .iqPage__title {
+    font-size: 30px;
+  }
+
+  .iqPage__wrap,
+  .iqArticleLayout {
+    padding-top: 28px;
+    padding-bottom: 48px;
+  }
+
+  .iqCover__name {
+    font-size: clamp(30px, 8.4vw, 40px);
+  }
+
+  .iqCover__slogan {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .iqCover__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .iqCover__btn {
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 12px;
+    box-sizing: border-box;
+  }
+
+  .iqServices__row,
+  .iqHomeArticles,
+  .iqDesignGrid,
+  .iqGallery,
+  .iqReviewGrid,
+  .iqAboutPage__valueGrid,
+  .iqFooter__grid,
+  .iqHomeSteps,
+  .iqFaq,
+  .iqContactForm__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .iqServices {
+    padding: 32px 0 12px;
+  }
+
+  .iqServices__item,
+  .iqServices__item--up {
+    height: 230px;
+  }
+
+  .iqWorks,
+  .iqTrust,
+  .iqHomeBlock,
+  .iqHandover {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+
+  .iqWorks__head,
+  .iqHandover__head,
+  .iqHomeBlock__head,
+  .iqTrust__head {
+    margin-bottom: 18px;
+  }
+
+  .iqContactForm,
+  .iqContactAside {
+    padding: 22px 16px 18px;
+    border-radius: 18px;
+  }
+
+  .iqFaq__item summary {
+    font-size: 15px;
+    padding: 16px 0;
+  }
+
+  .iqFooter {
+    padding: 36px 0 24px;
+  }
+
+  .iqFooter__grid {
+    gap: 22px;
+  }
+
+  .iqLightbox {
+    padding: 72px 12px 24px;
+  }
+
+  .iqLightbox__prev {
+    left: 8px;
+  }
+
+  .iqLightbox__next {
+    right: 8px;
+  }
+
+  .iqFloat {
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(14px, env(safe-area-inset-bottom));
+  }
+}

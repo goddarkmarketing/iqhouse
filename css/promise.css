@@ -1,0 +1,187 @@
+/* IQ HOUSE — promise cards (full-width, light grey + white cards) */
+.iqPromise {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  background: #ffffff;
+  color: #12161d;
+  line-height: normal;
+}
+
+.iqPromise__wrap {
+  width: min(1180px, calc(100% - 40px));
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 56px 0 64px;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.iqPromise__head {
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+.iqPromise__title {
+  margin: 0 0 8px;
+  color: #12161d;
+  font-family: var(--iq-font);
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.iqPromise__tagline {
+  margin: 0;
+  color: #5a6573;
+  font-family: var(--iq-font);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.55;
+}
+
+.iqPromise__tagline small {
+  display: block;
+  margin-top: 2px;
+  color: #8a7f74;
+  font-size: 13px;
+}
+
+.iqPromise__stage {
+  width: 100%;
+  min-width: 0;
+  /* Clip off-screen slides only — shadows stay inside each slide's padding */
+  overflow: hidden;
+}
+
+.iqPromise__slider.swiper {
+  width: 100%;
+  margin: 0;
+  padding: 0 !important;
+  overflow: visible !important;
+  box-sizing: border-box;
+}
+
+.iqPromise__slider .swiper-wrapper {
+  align-items: stretch;
+  overflow: visible;
+}
+
+/*
+  Shadow lives entirely inside the slide box via padding.
+  This prevents left/right/bottom shadow from being clipped by overflow.
+*/
+.iqPromise__slider .swiper-slide {
+  height: auto;
+  box-sizing: border-box;
+  background: transparent;
+  overflow: visible;
+  padding: 16px 14px 28px;
+}
+
+.iqPromise__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 248px;
+  margin: 0;
+  padding: 28px 22px 24px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(20, 17, 16, 0.06);
+  /* Blur kept within slide padding (~14px sides, ~28px bottom) */
+  box-shadow: 0 10px 22px rgba(20, 17, 16, 0.12);
+  box-sizing: border-box;
+}
+
+.iqPromise__icon {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  margin: 0 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #a8c4e8 0%, #1e3f6f 55%, #0c1a36 100%);
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(12, 26, 54, 0.2);
+}
+
+.iqPromise__icon svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.iqPromise__cardTitle {
+  margin: 0 0 10px;
+  color: #12161d;
+  font-family: var(--iq-font);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.iqPromise__cardDesc {
+  margin: 0;
+  flex: 1;
+  color: #5a6573;
+  font-family: var(--iq-font);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.iqPromise__cardLink {
+  display: inline-flex;
+  margin-top: 18px;
+  color: #0c1a36 !important;
+  font-family: var(--iq-font);
+  font-size: 13px;
+  font-weight: 650;
+  text-decoration: none !important;
+}
+
+.iqPromise__cardLink:hover {
+  color: #0f2748 !important;
+}
+
+.iqPromise__pagination {
+  margin-top: 4px;
+  text-align: center;
+}
+
+.iqPromise__pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #d7cfc4;
+  opacity: 1;
+}
+
+.iqPromise__pagination .swiper-pagination-bullet-active {
+  background: #0f2748;
+  width: 22px;
+  border-radius: 999px;
+}
+
+@media (max-width: 640px) {
+  .iqPromise__wrap {
+    width: calc(100% - 28px);
+    padding: 40px 0 48px;
+  }
+
+  .iqPromise__slider .swiper-slide {
+    padding: 14px 12px 24px;
+  }
+
+  .iqPromise__card {
+    min-height: 236px;
+    padding: 24px 18px 20px;
+  }
+}

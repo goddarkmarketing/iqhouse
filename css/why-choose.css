@@ -1,0 +1,240 @@
+/* IQ HOUSE — why-choose curved band after hero */
+.iqWhy {
+  /* Match hero navy so radius corners stay navy (not page grey/white) */
+  --iq-why-frame: #07122e;
+  --iq-why-bg: #0f2748;
+  --iq-why-bg-mid: #1e3f6f;
+  --iq-why-bg-deep: #0c1a36;
+  position: relative;
+  z-index: 4;
+  width: 100%;
+  max-width: 100%;
+  margin-top: clamp(-140px, -16vw, -100px);
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.iqWhy__panel {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: clamp(80px, 11vw, 132px) 20px clamp(64px, 8vw, 96px);
+  box-sizing: border-box;
+  color: #ffffff;
+  background:
+    radial-gradient(ellipse 90% 55% at 50% -8%, rgba(255, 255, 255, 0.08), transparent 52%),
+    linear-gradient(165deg, var(--iq-why-bg-mid) 0%, var(--iq-why-bg) 48%, var(--iq-why-bg-deep) 100%);
+  border-radius: 0 0 0 clamp(72px, 20vw, 200px);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+/* Grid from the curved corner, continuing down and fading upward from the bottom */
+.iqWhy::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -480px;
+  z-index: 0;
+  width: 100%;
+  height: calc(clamp(72px, 20vw, 200px) + 480px);
+  pointer-events: none;
+  background-color: #f5f7fa;
+  background-image:
+    linear-gradient(to right, rgba(79, 79, 79, 0.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(79, 79, 79, 0.16) 1px, transparent 1px);
+  background-size: 50px 56px;
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.35) 22%, #000 52%, #000 100%);
+  mask-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.35) 22%, #000 52%, #000 100%);
+}
+
+.iqWhy__panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 12% 78%, rgba(255, 255, 255, 0.06), transparent 32%),
+    radial-gradient(circle at 88% 70%, rgba(255, 255, 255, 0.05), transparent 30%);
+  opacity: 0.9;
+}
+
+.iqWhy__inner {
+  position: relative;
+  z-index: 1;
+  width: var(--iq-content-w, min(1180px, calc(100% - 40px)));
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.iqWhy__eyebrow {
+  margin: 0 0 12px;
+  color: rgba(232, 240, 255, 0.78);
+  font-family: var(--iq-font);
+  font-size: clamp(12px, 1.1vw, 14px);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.iqWhy__title {
+  margin: 0 auto 16px;
+  max-width: none;
+  color: #ffffff;
+  font-family: var(--iq-font);
+  font-size: clamp(26px, 2.6vw, 34px);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+
+.iqWhy__lead {
+  margin: 0 auto 36px;
+  max-width: 52em;
+  color: rgba(236, 242, 255, 0.92);
+  font-family: var(--iq-font);
+  font-size: clamp(15px, 1.45vw, 18px);
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.iqWhy__points {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  text-align: left;
+}
+
+.iqWhy__point {
+  padding: 8px 22px;
+  border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.iqWhy__point:first-child {
+  border-left: 0;
+  padding-left: 4px;
+}
+
+.iqWhy__pointNum {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.iqWhy__point strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #ffffff;
+  font-family: var(--iq-font);
+  font-size: clamp(16px, 1.5vw, 18px);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.iqWhy__point p {
+  margin: 0;
+  color: rgba(230, 238, 252, 0.86);
+  font-family: var(--iq-font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+  .iqWhy {
+    margin-top: clamp(-100px, -18vw, -72px);
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .iqWhy__panel {
+    border-radius: 0 0 0 clamp(48px, 16vw, 100px);
+    padding: 64px 18px 56px;
+  }
+
+  .iqWhy__points {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .iqWhy__point,
+  .iqWhy__point:first-child {
+    border-left: 0;
+    padding: 0 4px 0 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding-top: 18px;
+  }
+
+  .iqWhy__point:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .iqWhy__panel {
+    animation: iqWhyRise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .iqWhy__title,
+  .iqWhy__lead,
+  .iqWhy__points {
+    animation: iqWhyFade 0.85s ease both;
+  }
+
+  .iqWhy__lead {
+    animation-delay: 0.08s;
+  }
+
+  .iqWhy__points {
+    animation-delay: 0.16s;
+  }
+}
+
+@keyframes iqWhyRise {
+  from {
+    transform: translateY(28px);
+    opacity: 0.72;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes iqWhyFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iqWhy__panel,
+  .iqWhy__title,
+  .iqWhy__lead,
+  .iqWhy__points {
+    animation: none !important;
+  }
+}

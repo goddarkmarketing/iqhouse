@@ -1,0 +1,193 @@
+/* IQ HOUSE — 3D review marquee matching demo transform */
+.iqCover__media--hidden {
+  display: none !important;
+}
+
+.iqCover__marquee3d {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+  contain: paint;
+  background: #07122e;
+  pointer-events: none;
+}
+
+/* Soft feather into navy — full-height, no hard bottom cut */
+.iqCover__marqueeStage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  perspective: 300px;
+  padding-right: clamp(4px, 1.5vw, 20px);
+  -webkit-mask-image: linear-gradient(
+    108deg,
+    transparent 0%,
+    transparent 10%,
+    rgba(0, 0, 0, 0.18) 26%,
+    rgba(0, 0, 0, 0.5) 38%,
+    #000 52%,
+    #000 100%
+  );
+  mask-image: linear-gradient(
+    108deg,
+    transparent 0%,
+    transparent 10%,
+    rgba(0, 0, 0, 0.18) 26%,
+    rgba(0, 0, 0, 0.5) 38%,
+    #000 52%,
+    #000 100%
+  );
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.iqCover__marqueeTilt {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  /* Tall + slightly lower so tilted columns fill to the bottom of iqCover */
+  height: 220%;
+  margin-top: -24%;
+  transform: translateX(36px) translateY(6%) translateZ(-100px) rotateX(20deg) rotateY(-10deg) rotateZ(20deg);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.iqMarquee {
+  --duration: 36s;
+  --gap: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  padding: 0;
+  gap: var(--gap);
+}
+
+.iqMarquee__group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: var(--gap);
+  flex-shrink: 0;
+  animation: iqMarqueeVertical var(--duration) linear infinite;
+}
+
+.iqMarquee--down .iqMarquee__group {
+  animation-direction: reverse;
+}
+
+@keyframes iqMarqueeVertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+.iqReviewCard {
+  width: 248px;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  color: #12161d;
+  font-family: var(--iq-font);
+  box-sizing: border-box;
+}
+
+.iqReviewCard--photo {
+  height: 168px;
+}
+
+.iqReviewCard--photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Edge fades — top/sides only; no bottom cut so photos reach section end */
+.iqCover__marqueeFade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, #07122e 0%, rgba(7, 18, 46, 0.45) 6%, transparent 16%),
+    linear-gradient(108deg, #07122e 0%, #07122e 12%, rgba(7, 18, 46, 0.7) 26%, rgba(7, 18, 46, 0.28) 40%, transparent 56%),
+    linear-gradient(270deg, #07122e 0%, transparent 14%);
+  background-repeat: no-repeat;
+  background-size:
+    100% 16%,
+    100% 100%,
+    14% 100%;
+  background-position:
+    top center,
+    center left,
+    center right;
+}
+
+.iqCover__content {
+  position: relative;
+  z-index: 2;
+}
+
+.iqCover__brand {
+  position: relative;
+  z-index: 3;
+}
+
+@media (max-width: 980px) {
+  .iqCover__marqueeTilt {
+    height: 210%;
+    margin-top: -22%;
+    transform: translateX(20px) translateY(4%) translateZ(-80px) rotateX(20deg) rotateY(-10deg) rotateZ(20deg);
+  }
+
+  .iqReviewCard {
+    width: 210px;
+  }
+
+  .iqReviewCard--photo {
+    height: 148px;
+  }
+}
+
+@media (max-width: 640px) {
+  .iqCover__marqueeTilt {
+    gap: 12px;
+    height: 200%;
+    margin-top: -18%;
+    transform: translateX(8px) translateY(2%) translateZ(-60px) rotateX(18deg) rotateY(-8deg) rotateZ(16deg);
+  }
+
+  .iqReviewCard {
+    width: 176px;
+  }
+
+  .iqReviewCard--photo {
+    height: 124px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iqMarquee__group {
+    animation: none !important;
+  }
+}

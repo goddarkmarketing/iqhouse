@@ -1,0 +1,161 @@
+/* Site fonts from fonts/fonts */
+
+/* Thai + Latin body (file = regular, file_1 = extrabold) */
+@font-face {
+  font-family: "IQ Sans";
+  src: url("../fonts/fonts/file.woff2") format("woff2"),
+       url("../fonts/fonts/file.woff") format("woff"),
+       url("../fonts/fonts/file.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IQ Sans";
+  src: url("../fonts/fonts/file.woff2") format("woff2"),
+       url("../fonts/fonts/file.woff") format("woff"),
+       url("../fonts/fonts/file.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IQ Sans";
+  src: url("../fonts/fonts/file.woff2") format("woff2"),
+       url("../fonts/fonts/file.woff") format("woff"),
+       url("../fonts/fonts/file.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IQ Sans";
+  src: url("../fonts/fonts/file_1.woff2") format("woff2"),
+       url("../fonts/fonts/file_1.woff") format("woff"),
+       url("../fonts/fonts/file_1.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IQ Sans";
+  src: url("../fonts/fonts/file_1.woff2") format("woff2"),
+       url("../fonts/fonts/file_1.woff") format("woff"),
+       url("../fonts/fonts/file_1.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IQ Sans";
+  src: url("../fonts/fonts/file_1.woff2") format("woff2"),
+       url("../fonts/fonts/file_1.woff") format("woff"),
+       url("../fonts/fonts/file_1.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Latin display — Avenir */
+@font-face {
+  font-family: "Avenir LT";
+  src: url("../fonts/fonts/avenir-lt-w05_35-light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir LT";
+  src: url("../fonts/fonts/avenir-lt-w05_35-light.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir LT";
+  src: url("../fonts/fonts/avenir-lt-w05_85-heavy.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir LT";
+  src: url("../fonts/fonts/avenir-lt-w05_85-heavy.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Latin display — Helvetica */
+@font-face {
+  font-family: "Helvetica W01";
+  src: url("../fonts/fonts/helvetica-w02-light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica W01";
+  src: url("../fonts/fonts/helvetica-w02-light.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica W01";
+  src: url("../fonts/fonts/helvetica-w02-bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Latin UI — DIN Next */
+@font-face {
+  font-family: "DIN Next";
+  src: url("../fonts/fonts/din-next-w02-light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "DIN Next";
+  src: url("../fonts/fonts/din-next-w02-light.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --iq-font: "IQ Sans", "Avenir LT", "Helvetica W01", "DIN Next", sans-serif;
+  --iq-font-display: "Avenir LT", "IQ Sans", sans-serif;
+}
+
+html,
+body {
+  font-family: var(--iq-font) !important;
+}
+
+/* Apply across page UI; keep icon fonts intact */
+body *:not(script):not(style):not(svg):not(path) {
+  font-family: var(--iq-font) !important;
+}
+
+[class*="base-icon"],
+.base-icon,
+[class*="base-icon"]::before,
+[class*="base-icon"]::after,
+.base-icon::before,
+.base-icon::after {
+  font-family: "base-icon", sans-serif !important;
+}

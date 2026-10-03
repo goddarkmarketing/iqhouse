@@ -1,0 +1,734 @@
+/* IQ HOUSE — bento testimonials (after hero) */
+.iqTrust {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  background: #fff;
+  color: #12161d;
+  padding: 56px 0 64px;
+  box-sizing: border-box;
+  font-family: var(--iq-font);
+}
+
+.iqTrust__wrap {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+  position: relative;
+  padding-top: 36px;
+  padding-bottom: 28px;
+  overflow: visible;
+}
+
+.iqTrust__head {
+  max-width: 720px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.iqTrust__title {
+  margin: 0 0 10px;
+  font-family: var(--iq-font);
+  font-size: clamp(26px, 2.6vw, 34px);
+  font-weight: 700;
+  line-height: 1.3;
+  color: #12161d;
+}
+
+.iqTrust__desc {
+  margin: 0;
+  color: #5a6573;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.iqTrust__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  align-items: stretch;
+  overflow: visible;
+}
+
+.iqTrust__grid--vision {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: auto minmax(340px, 1fr);
+}
+
+.iqTrust__grid--vision .iqTrust__col--left {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+.iqTrust__grid--vision .iqTrust__card--wide {
+  grid-column: 2 / 4;
+  grid-row: 1;
+  min-height: 220px;
+}
+
+.iqTrust__card--wide {
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+  padding-right: 24px;
+  background:
+    radial-gradient(ellipse 90% 55% at 50% -8%, rgba(255, 255, 255, 0.08), transparent 52%),
+    linear-gradient(165deg, #1e3f6f 0%, #0f2748 48%, #0c1a36 100%);
+  border-color: transparent;
+}
+
+.iqTrust__card--wide .iqTrust__quote {
+  position: absolute;
+  left: 28px;
+  top: 50%;
+  z-index: 2;
+  width: auto;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-size: clamp(16px, 1.45vw, 19px);
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: 0.015em;
+  text-align: left;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+  transform: translateY(-50%);
+}
+
+.iqTrust__quoteLine {
+  display: block;
+  white-space: nowrap;
+}
+
+.iqTrust__quoteYear {
+  display: inline;
+  color: #e2bc3a;
+  font-size: 1.65em;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  vertical-align: -0.1em;
+  text-shadow: 0 1px 10px rgba(226, 188, 58, 0.35);
+}
+
+.iqTrust__wideMedia {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 14px;
+  pointer-events: none;
+}
+
+.iqTrust__wideMedia img {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 58%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 82% 38%;
+  transform: scale(1.08);
+  transform-origin: right center;
+}
+
+.iqTrust__wideMedia::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 90% 55% at 28% -8%, rgba(255, 255, 255, 0.08), transparent 52%),
+    linear-gradient(
+      90deg,
+      #1e3f6f 0%,
+      #1e3f6f 18%,
+      #0f2748 34%,
+      #0c1a36 44%,
+      rgba(12, 26, 54, 0.94) 54%,
+      rgba(12, 26, 54, 0.68) 64%,
+      rgba(12, 26, 54, 0.32) 78%,
+      rgba(12, 26, 54, 0) 100%
+    );
+}
+
+.iqTrust__grid--vision .iqTrust__card--values {
+  grid-column: 2;
+  grid-row: 2;
+  min-height: 340px;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+.iqTrust__valuesLogo {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: min(46%, 168px);
+  height: auto;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  flex: 0 0 auto;
+  object-fit: contain;
+  border-radius: 50%;
+  filter: drop-shadow(0 6px 14px rgba(12, 26, 54, 0.1));
+}
+
+.iqTrust__card--values .iqTrust__quote {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+}
+
+.iqTrust__grid--vision .iqTrust__card--team {
+  grid-column: 3;
+  grid-row: 2;
+  min-height: 340px;
+}
+
+.iqTrust__col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+  overflow: visible;
+}
+
+.iqTrust__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(20, 17, 16, 0.1);
+  padding: 28px 24px;
+  box-sizing: border-box;
+  min-height: 220px;
+}
+
+.iqTrust__card--tall {
+  flex: 1.7;
+  min-height: 340px;
+  background: #f5f7fa;
+  color: #12161d;
+}
+
+.iqTrust__card--director {
+  overflow: visible;
+  z-index: 3;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.iqTrust__directorFig {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  z-index: 1;
+  width: min(108%, 420px);
+  height: calc(100% + 48px);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.iqTrust__directorImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 10px 22px rgba(12, 26, 54, 0.12));
+}
+
+.iqTrust__directorFade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  height: 42%;
+  border-radius: 0 0 14px 14px;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(245, 247, 250, 0) 0%,
+    rgba(245, 247, 250, 0.55) 36%,
+    rgba(245, 247, 250, 0.92) 70%,
+    #f5f7fa 100%
+  );
+}
+
+.iqTrust__card--director .iqTrust__gridPattern {
+  z-index: 0;
+}
+
+.iqTrust__meta.iqTrust__directorInfo {
+  position: relative;
+  z-index: 5;
+  margin-top: 0;
+  margin-bottom: 4px;
+  width: 100%;
+  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.iqTrust__meta.iqTrust__directorInfo strong {
+  font-size: 17px;
+}
+
+.iqTrust__meta.iqTrust__directorInfo span {
+  opacity: 0.8;
+}
+
+.iqTrust__card--short {
+  flex: 0.95;
+  min-height: 220px;
+}
+
+.iqTrust__card--navy {
+  background: #0c1a36;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.iqTrust__card--photo {
+  isolation: isolate;
+}
+
+.iqTrust__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  pointer-events: none;
+}
+
+.iqTrust__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(7, 18, 46, 0.55) 0%,
+      rgba(7, 18, 46, 0.72) 42%,
+      rgba(7, 18, 46, 0.88) 100%
+    );
+}
+
+.iqTrust__card--photo .iqTrust__gridPattern {
+  z-index: 2;
+}
+
+.iqTrust__card--photo .iqTrust__quote,
+.iqTrust__card--photo .iqTrust__meta {
+  z-index: 3;
+}
+
+.iqTrust__play {
+  position: absolute;
+  left: 50%;
+  top: 28%;
+  z-index: 4;
+  width: 96px;
+  height: 96px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid rgba(255, 255, 255, 0.92);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  box-shadow:
+    0 10px 28px rgba(7, 18, 46, 0.28),
+    inset 0 0 0 8px rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: transform 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
+}
+
+.iqTrust__play svg {
+  position: relative;
+  z-index: 1;
+  width: 52px;
+  height: 52px;
+  margin-left: 5px;
+  fill: #ffffff;
+  filter: drop-shadow(0 2px 6px rgba(7, 18, 46, 0.35));
+}
+
+.iqTrust__play::before,
+.iqTrust__play::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+  animation: iqPlayWave 2.6s ease-out infinite;
+}
+
+.iqTrust__play::after {
+  animation-delay: 1.3s;
+}
+
+@keyframes iqPlayWave {
+  0% {
+    transform: scale(1);
+    opacity: 0.65;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+.iqTrust__play:hover,
+.iqTrust__play:focus-visible {
+  background: rgba(255, 255, 255, 0.28);
+  transform: translate(-50%, -50%) scale(1.06);
+  box-shadow:
+    0 14px 32px rgba(7, 18, 46, 0.36),
+    inset 0 0 0 8px rgba(255, 255, 255, 0.14);
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .iqTrust__play::before,
+  .iqTrust__play::after {
+    animation: none;
+  }
+}
+
+.iqVideo {
+  position: relative;
+  width: min(960px, calc(100vw - 32px));
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  background: #07122e;
+  box-shadow: 0 24px 60px rgba(7, 18, 46, 0.45);
+  overflow: hidden;
+}
+
+.iqVideo::backdrop {
+  background: rgba(7, 18, 46, 0.72);
+}
+
+.iqVideo__player {
+  display: block;
+  width: 100%;
+  max-height: min(78vh, 640px);
+  background: #000;
+}
+
+.iqVideo__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #0c1a36;
+  font-family: var(--iq-font);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.iqTrust__card--blue {
+  background:
+    radial-gradient(ellipse 90% 55% at 50% -8%, rgba(255, 255, 255, 0.08), transparent 52%),
+    linear-gradient(165deg, #1e3f6f 0%, #0f2748 48%, #0c1a36 100%);
+  color: #fff;
+  border-color: transparent;
+}
+
+.iqTrust__card--pillars {
+  justify-content: center;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
+.iqTrust__pillars {
+  position: relative;
+  z-index: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: grid;
+  gap: 12px;
+}
+
+.iqTrust__pillar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.iqTrust__pillarIcon {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.iqTrust__pillarIcon svg {
+  width: 20px;
+  height: 20px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.iqTrust__pillarText {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.iqTrust__pillarText strong {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: #fff;
+}
+
+.iqTrust__pillarText span {
+  font-size: 13px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.iqTrust__card--dark {
+  background: #111111;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.08);
+  flex: 1;
+  min-height: 220px;
+}
+
+.iqTrust__gridPattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(79, 79, 79, 0.16) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(79, 79, 79, 0.16) 1px, transparent 1px);
+  background-size: 50px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, #000 70%, transparent 110%);
+  mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, #000 70%, transparent 110%);
+}
+
+.iqTrust__card--navy .iqTrust__gridPattern,
+.iqTrust__card--dark .iqTrust__gridPattern {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+}
+
+.iqTrust__quote {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.iqTrust__card--tall .iqTrust__quote {
+  font-size: 16px;
+}
+
+.iqTrust__meta {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.iqTrust__meta strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.iqTrust__meta span {
+  display: block;
+  margin-top: 2px;
+  font-size: 13px;
+  opacity: 0.78;
+}
+
+.iqTrust__avatar {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.iqTrust__card--tall .iqTrust__avatar {
+  box-shadow: 0 6px 16px rgba(20, 17, 16, 0.12);
+}
+
+.iqTrust__rail {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18px;
+  border-bottom: 2px solid #e6e6e6;
+  pointer-events: none;
+}
+
+.iqTrust__rail::before,
+.iqTrust__rail::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.iqTrust__rail::before {
+  left: -2px;
+}
+
+.iqTrust__rail::after {
+  right: -2px;
+}
+
+@media (max-width: 900px) {
+  .iqTrust__grid,
+  .iqTrust__grid--vision {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .iqTrust__grid--vision .iqTrust__col--left,
+  .iqTrust__grid--vision .iqTrust__card--wide,
+  .iqTrust__grid--vision .iqTrust__card--values,
+  .iqTrust__grid--vision .iqTrust__card--team {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .iqTrust__card--wide {
+    min-height: 240px;
+  }
+
+  .iqTrust__wideMedia {
+    width: 100%;
+  }
+
+  .iqTrust__card--tall,
+  .iqTrust__card--short,
+  .iqTrust__card--dark {
+    flex: none;
+    min-height: 0;
+  }
+
+  .iqTrust__card--director {
+    min-height: 380px;
+  }
+
+  .iqTrust__directorFig {
+    width: min(100%, 360px);
+    height: calc(100% + 40px);
+  }
+}
+
+@media (max-width: 640px) {
+  .iqTrust__wrap {
+    width: calc(100% - 28px);
+    padding-top: 28px;
+  }
+
+  .iqTrust__quote {
+    font-size: 14px;
+  }
+
+  .iqTrust__card--director {
+    min-height: 360px;
+  }
+
+  .iqTrust__card--wide {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-end;
+    min-height: 280px;
+    padding: 22px 20px;
+  }
+
+  .iqTrust__card--wide .iqTrust__quote {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    max-width: none;
+    transform: none;
+  }
+
+  .iqTrust__wideMedia {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    border-radius: 14px;
+  }
+
+  .iqTrust__wideMedia::before {
+    background:
+      radial-gradient(ellipse 90% 55% at 50% -8%, rgba(255, 255, 255, 0.08), transparent 52%),
+      linear-gradient(
+        180deg,
+        rgba(30, 63, 111, 0.25) 0%,
+        rgba(15, 39, 72, 0.55) 36%,
+        rgba(12, 26, 54, 0.88) 68%,
+        #0c1a36 100%
+      );
+  }
+
+  .iqTrust__card--wide .iqTrust__quote {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    max-width: none;
+    transform: none;
+  }
+
+  .iqTrust__quoteLine {
+    white-space: normal;
+  }
+}
