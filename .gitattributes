@@ -1,2 +1,1 @@
-videos/*.mp4 filter=lfs diff=lfs merge=lfs -text
-videos/*.MP4 filter=lfs diff=lfs merge=lfs -text
+videos/DJI_0975.MP4 filter=lfs diff=lfs merge=lfs -text
