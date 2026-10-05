@@ -24,7 +24,7 @@
         prevEl: el.querySelector(".iqWorks__prev"),
       },
       breakpoints: {
-        0: { slidesPerView: 1.2, spaceBetween: 12 },
+        0: { slidesPerView: 2, spaceBetween: 10 },
         700: { slidesPerView: 2.15, spaceBetween: 14 },
         1100: { slidesPerView: 3.2, spaceBetween: 16 },
         1400: { slidesPerView: 4.4, spaceBetween: 16 },

@@ -758,13 +758,14 @@
   padding: 0;
   display: grid;
   gap: 8px;
+  font-weight: 400;
 }
 
 .iqFooter__col a {
   color: rgba(255, 255, 255, 0.85) !important;
   text-decoration: none !important;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .iqFooter__col a:hover {

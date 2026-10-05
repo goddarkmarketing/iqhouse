@@ -28,15 +28,28 @@
     nav.classList.toggle("is-scrolled", window.scrollY > 12);
   };
 
+  const mobileNav = window.matchMedia("(max-width: 1100px)");
+
+  const syncNavHeight = () => {
+    document.documentElement.style.setProperty("--iq-nav-live", nav.getBoundingClientRect().height + "px");
+  };
+
   const closeMenu = () => {
     nav.classList.remove("is-open");
-    if (toggle) toggle.setAttribute("aria-expanded", "false");
+    document.documentElement.classList.remove("iq-nav-open");
+    if (toggle) {
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "เปิดเมนู");
+    }
   };
 
   if (toggle) {
     toggle.addEventListener("click", () => {
+      syncNavHeight();
       const open = nav.classList.toggle("is-open");
+      document.documentElement.classList.toggle("iq-nav-open", open && mobileNav.matches);
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "ปิดเมนู" : "เปิดเมนู");
     });
   }
 
@@ -55,5 +68,10 @@
   });
 
   window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", () => {
+    syncNavHeight();
+    if (!mobileNav.matches) closeMenu();
+  });
+  syncNavHeight();
   onScroll();
 })();

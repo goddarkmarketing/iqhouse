@@ -1,29 +1,47 @@
 /* IQ HOUSE — iPad and phone layout */
 
 @media (max-width: 1100px) {
+  html.iq-nav-open,
+  html.iq-nav-open body {
+    overflow: hidden !important;
+  }
+
+  .iqNav {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
   .iqNav__bar {
     position: relative;
+    width: 100% !important;
+    max-width: none !important;
+    padding-right: 16px !important;
+    padding-left: 16px !important;
   }
 
   .iqNav__toggle {
-    display: grid;
-    place-items: center;
+    display: block;
   }
 
   .iqNav__menu {
     display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
+    position: fixed;
+    top: var(--iq-nav-live, var(--iq-nav-h));
     right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1190;
     flex-direction: column;
     align-items: stretch;
-    gap: 4px;
+    gap: 0;
+    width: auto;
     margin: 0;
-    padding: 8px 0 14px;
+    padding: 8px 8px 96px;
+    overflow: auto;
+    border: 0;
+    border-radius: 0;
     background: #fff;
-    border-bottom: 1px solid var(--iq-line);
-    box-shadow: 0 16px 32px rgba(12, 26, 54, 0.08);
+    box-shadow: none;
   }
 
   .iqNav.is-open .iqNav__menu {
@@ -31,8 +49,27 @@
   }
 
   .iqNav__link {
-    padding: 14px 8px;
-    font-size: 16px;
+    padding: 18px 16px;
+    border-radius: 12px;
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  .iqNav__link.is-active,
+  .iqNav__link[aria-current="page"] {
+    background: rgba(12, 26, 54, 0.06);
+    box-shadow: inset 3px 0 0 #0c1a36;
+  }
+
+  .iqNav.is-open .iqNav__cta {
+    display: inline-flex;
+    position: fixed;
+    z-index: 1191;
+    right: 20px;
+    bottom: max(20px, env(safe-area-inset-bottom));
+    left: 20px;
+    height: 48px;
+    border-radius: 14px;
   }
 
   .iqNav__cta {
@@ -177,7 +214,6 @@
     max-width: 100%;
   }
 
-  .iqTopbar__hours,
   .iqTopbar__area {
     display: none;
   }
@@ -227,14 +263,60 @@
     display: none;
   }
 
+  .iqTopbar {
+    font-size: 11px;
+  }
+
   .iqTopbar__inner {
     width: 100%;
     max-width: none;
-    padding: 0 16px;
+    padding: 0 10px;
+  }
+
+  .iqTopbar__info {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .iqTopbar__info a,
+  .iqTopbar__info span {
+    gap: 4px;
+    letter-spacing: 0;
+  }
+
+  .iqTopbar__hours {
+    display: list-item;
+    margin-left: 0;
+    padding-left: 8px;
+  }
+
+  .iqTopbar__mark {
+    width: 16px;
+    height: 16px;
+  }
+
+  .iqTopbar__mark img {
+    width: 12px;
+    height: 12px;
   }
 
   .iqCover {
-    padding-bottom: 148px;
+    align-items: flex-start;
+    min-height: 0;
+    padding-top: 68vw;
+    padding-bottom: 132px;
+  }
+
+  .iqCover__blend {
+    background: linear-gradient(
+      to bottom,
+      rgba(7, 18, 46, 0.05) 0%,
+      rgba(7, 18, 46, 0.08) 46%,
+      rgba(7, 18, 46, 0.55) 78%,
+      #07122e 100%
+    );
   }
 
   .iqPage__hero {
@@ -269,6 +351,13 @@
     padding-bottom: 48px;
   }
 
+  .iqCover__brand,
+  .iqCover__name {
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+  }
+
   .iqCover__name {
     font-size: clamp(30px, 8.4vw, 40px);
   }
@@ -291,11 +380,82 @@
     box-sizing: border-box;
   }
 
+  .iqCover__marquee3d {
+    inset: 0 0 auto 0;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+  }
+
+  .iqCover__marqueeStage {
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 0;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 54%,
+      rgba(0, 0, 0, 0.82) 70%,
+      rgba(0, 0, 0, 0.4) 84%,
+      rgba(0, 0, 0, 0.08) 94%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 54%,
+      rgba(0, 0, 0, 0.82) 70%,
+      rgba(0, 0, 0, 0.4) 84%,
+      rgba(0, 0, 0, 0.08) 94%,
+      transparent 100%
+    );
+  }
+
+  .iqCover__marqueeFade {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 48%,
+      rgba(7, 18, 46, 0.18) 66%,
+      rgba(7, 18, 46, 0.55) 80%,
+      rgba(7, 18, 46, 0.88) 92%,
+      #07122e 100%
+    );
+    background-size: 100% 100%;
+    background-position: center bottom;
+  }
+
+  .iqCover__marqueeTilt {
+    height: 148%;
+    margin-top: -6%;
+    max-width: none;
+    gap: 12px;
+    transform: translateX(2%) translateY(2%) translateZ(-36px) rotateX(18deg) rotateY(-12deg) rotateZ(18deg);
+  }
+
+  .iqReviewCard,
+  .iqReviewCard--photo {
+    width: 46vw;
+    height: auto;
+    aspect-ratio: 400 / 280;
+  }
+
+  .iqMarquee {
+    height: 100%;
+    max-height: none;
+    overflow: hidden;
+  }
+
   .iqServices__row,
   .iqHomeArticles,
   .iqDesignGrid,
   .iqGallery,
-  .iqReviewGrid,
+  .iqReviewGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
   .iqAboutPage__valueGrid,
   .iqFooter__grid,
   .iqHomeSteps,
@@ -304,13 +464,46 @@
     grid-template-columns: 1fr;
   }
 
+  .iqArticleCard__body,
+  .iqDesignCard__body {
+    padding: 10px 10px 12px;
+    gap: 6px;
+  }
+
+  .iqArticleCard h3,
+  .iqDesignCard h2 {
+    font-size: 14px;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .iqArticleCard p {
+    font-size: 12px;
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .iqArticleCard__more {
+    min-height: 30px;
+    padding: 0 10px;
+    font-size: 12px;
+  }
+
   .iqServices {
     padding: 32px 0 12px;
   }
 
   .iqServices__item,
   .iqServices__item--up {
-    height: 230px;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    margin-top: 0;
   }
 
   .iqWorks,

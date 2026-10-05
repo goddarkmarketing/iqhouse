@@ -85,6 +85,10 @@
   text-shadow: 0 2px 18px rgba(4, 12, 36, 0.35);
 }
 
+.iqCover__keep {
+  white-space: nowrap;
+}
+
 .iqCover__slogan {
   margin: 12px 0 0;
   max-width: 34em;

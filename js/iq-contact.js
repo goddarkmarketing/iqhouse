@@ -7,7 +7,7 @@
   if (params.get("sent") === "1") {
     status.hidden = false;
     status.className = "iqContactForm__status is-ok";
-    status.textContent = "ได้รับข้อความแล้ว ทีมไอคิวเฮ้าส์จะติดต่อกลับในเวลาทำการ จันทร์–เสาร์ 08:00–17:30";
+    status.textContent = "ได้รับข้อความแล้ว ทีมไอคิวเฮ้าส์จะติดต่อกลับในเวลาทำการ จันทร์–เสาร์ 08:30–17:30";
   } else if (params.get("error") === "1") {
     status.hidden = false;
     status.className = "iqContactForm__status is-err";

@@ -20,7 +20,7 @@
         pauseOnMouseEnter: true,
       },
       breakpoints: {
-        0: { slidesPerView: 1.12, spaceBetween: 12 },
+        0: { slidesPerView: 2, spaceBetween: 10 },
         700: { slidesPerView: 2.05, spaceBetween: 14 },
         1100: { slidesPerView: 3.05, spaceBetween: 16 },
       },
