@@ -4,10 +4,10 @@
     if (!el || typeof Swiper === "undefined") return;
 
     var swiper = new Swiper(el, {
-      slidesPerView: 3.2,
-      spaceBetween: 16,
+      slidesPerView: 6.4,
+      spaceBetween: 12,
       loop: true,
-      speed: 7000,
+      speed: 9000,
       allowTouchMove: true,
       grabCursor: true,
       freeMode: {
@@ -20,9 +20,10 @@
         pauseOnMouseEnter: true,
       },
       breakpoints: {
-        0: { slidesPerView: 2, spaceBetween: 10 },
-        700: { slidesPerView: 2.05, spaceBetween: 14 },
-        1100: { slidesPerView: 3.05, spaceBetween: 16 },
+        0: { slidesPerView: 2.15, spaceBetween: 8 },
+        700: { slidesPerView: 3.6, spaceBetween: 10 },
+        1100: { slidesPerView: 5.2, spaceBetween: 12 },
+        1400: { slidesPerView: 6.4, spaceBetween: 12 },
       },
     });
 

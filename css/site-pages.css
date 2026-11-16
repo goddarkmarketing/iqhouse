@@ -32,6 +32,29 @@
   object-position: right center;
 }
 
+.iqPage__hero--plain {
+  min-height: 0;
+  background: transparent;
+  overflow: visible;
+}
+
+.iqPage__hero--plain .iqPage__heroInner {
+  color: #12161d;
+  padding: 36px 0 8px;
+  text-align: center;
+}
+
+.iqPage__hero--plain .iqPage__eyebrow {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #5a6573;
+}
+
+.iqPage__hero--plain .iqPage__lead {
+  color: #5a6573;
+}
+
 .iqPage__heroShade {
   position: absolute;
   inset: 0;
@@ -792,7 +815,7 @@
 
 .iqReviewGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 14px;
 }
 

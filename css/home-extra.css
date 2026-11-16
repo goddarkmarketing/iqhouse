@@ -1014,6 +1014,17 @@
   font-weight: 700;
 }
 
+.iqHandover--reviews .iqHandover__card {
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  background: #071433;
+}
+
+.iqHandover--reviews .iqHandover__card img {
+  object-fit: contain;
+  object-position: center;
+}
+
 .iqHandover__more {
   margin-top: 18px;
   text-align: center;

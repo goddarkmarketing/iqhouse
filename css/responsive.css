@@ -160,6 +160,10 @@
     min-height: 260px;
   }
 
+  .iqPage__hero--plain {
+    min-height: 0;
+  }
+
   .iqPage__heroImg--banner {
     object-position: 78% center;
   }
@@ -321,6 +325,10 @@
 
   .iqPage__hero {
     min-height: 210px;
+  }
+
+  .iqPage__hero--plain {
+    min-height: 0;
   }
 
   .iqPage__heroInner,
