@@ -442,11 +442,24 @@
     transform: translateX(2%) translateY(2%) translateZ(-36px) rotateX(18deg) rotateY(-12deg) rotateZ(18deg);
   }
 
-  .iqReviewCard,
-  .iqReviewCard--photo {
+  .iqMarquee .iqReviewCard,
+  .iqMarquee .iqReviewCard--photo {
     width: 46vw;
     height: auto;
     aspect-ratio: 400 / 280;
+  }
+
+  .iqReviewGrid .iqReviewCard {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    aspect-ratio: auto;
+  }
+
+  .iqReviewGrid .iqReviewCard img {
+    width: 100%;
+    height: auto;
+    object-fit: fill;
   }
 
   .iqMarquee {

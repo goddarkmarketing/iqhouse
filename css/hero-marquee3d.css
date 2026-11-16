@@ -97,7 +97,7 @@
   }
 }
 
-.iqReviewCard {
+.iqMarquee .iqReviewCard {
   width: 248px;
   padding: 0;
   overflow: hidden;
@@ -160,7 +160,7 @@
     transform: translateX(20px) translateY(4%) translateZ(-80px) rotateX(20deg) rotateY(-10deg) rotateZ(20deg);
   }
 
-  .iqReviewCard {
+  .iqMarquee .iqReviewCard {
     width: 210px;
   }
 
@@ -177,7 +177,7 @@
     transform: translateX(8px) translateY(2%) translateZ(-60px) rotateX(18deg) rotateY(-8deg) rotateZ(16deg);
   }
 
-  .iqReviewCard {
+  .iqMarquee .iqReviewCard {
     width: 176px;
   }
 
